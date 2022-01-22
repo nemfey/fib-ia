@@ -1,0 +1,343 @@
+@prefix : <http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia> .
+
+<http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia> rdf:type owl:Ontology ;
+                                                                  rdfs:comment "Ontologia de la practica" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#esta_en
+:esta_en rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Vivienda ;
+         rdfs:range :Ubicacion .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#tiene
+:tiene rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       rdfs:domain :Ubicacion ;
+       rdfs:range :Servicios .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#ascensor
+:ascensor rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Vivienda ;
+          rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#coordenadaX
+:coordenadaX rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :Servicios ,
+                         :Vivienda ;
+             rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#coordenadaY
+:coordenadaY rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :Servicios ,
+                         :Vivienda ;
+             rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#equipada
+:equipada rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Vivienda ;
+          rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#estudios
+:estudios rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Educacion ;
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:oneOf [ rdf:type rdf:List ;
+                                   rdf:first "Primaria" ;
+                                   rdf:rest [ rdf:type rdf:List ;
+                                              rdf:first "Secundaria" ;
+                                              rdf:rest [ rdf:type rdf:List ;
+                                                         rdf:first "Universitaria" ;
+                                                         rdf:rest rdf:nil
+                                                       ]
+                                            ]
+                                 ]
+                     ] .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#garaje
+:garaje rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :Vivienda ;
+        rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#horario
+:horario rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Comercio ,
+                     :Ocio ;
+         rdfs:range [ rdf:type rdfs:Datatype ;
+                      owl:oneOf [ rdf:type rdf:List ;
+                                  rdf:first "Diurno" ;
+                                  rdf:rest [ rdf:type rdf:List ;
+                                             rdf:first "Nocturno" ;
+                                             rdf:rest rdf:nil
+                                           ]
+                                ]
+                    ] .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#mascotas
+:mascotas rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Vivienda ;
+          rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#nombre
+:nombre rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :Servicios ,
+                    :Ubicacion ,
+                    :Vivienda ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#numeroHabitaciones
+:numeroHabitaciones rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdf:type owl:FunctionalProperty ;
+                    rdfs:domain :Vivienda ;
+                    rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#numeroLavabos
+:numeroLavabos rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain :Vivienda ;
+               rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#numeroPisos
+:numeroPisos rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :Chalet ;
+             rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#piscina
+:piscina rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Vivienda ;
+         rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#planta
+:planta rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :Vivienda ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#precio
+:precio rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :Vivienda ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#superficie
+:superficie rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Vivienda ;
+            rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#terraza
+:terraza rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Vivienda ;
+         rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#tipoComercio
+:tipoComercio rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain :Comercio ;
+              rdfs:range [ rdf:type rdfs:Datatype ;
+                           owl:oneOf [ rdf:type rdf:List ;
+                                       rdf:first "Bazar" ;
+                                       rdf:rest [ rdf:type rdf:List ;
+                                                  rdf:first "Supermercado" ;
+                                                  rdf:rest [ rdf:type rdf:List ;
+                                                             rdf:first "Tecnologia" ;
+                                                             rdf:rest rdf:nil
+                                                           ]
+                                                ]
+                                     ]
+                         ] .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#tipoOcio
+:tipoOcio rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Ocio ;
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:oneOf [ rdf:type rdf:List ;
+                                   rdf:first "Cine" ;
+                                   rdf:rest [ rdf:type rdf:List ;
+                                              rdf:first "Discoteca" ;
+                                              rdf:rest [ rdf:type rdf:List ;
+                                                         rdf:first "Teatro" ;
+                                                         rdf:rest rdf:nil
+                                                       ]
+                                            ]
+                                 ]
+                     ] .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#tipoTransporte
+:tipoTransporte rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:domain :Transporte ;
+                rdfs:range [ rdf:type rdfs:Datatype ;
+                             owl:oneOf [ rdf:type rdf:List ;
+                                         rdf:first "Autobus" ;
+                                         rdf:rest [ rdf:type rdf:List ;
+                                                    rdf:first "Metro" ;
+                                                    rdf:rest [ rdf:type rdf:List ;
+                                                               rdf:first "Tren" ;
+                                                               rdf:rest rdf:nil
+                                                             ]
+                                                  ]
+                                       ]
+                           ] .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#vistas
+:vistas rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :Vivienda ;
+        rdfs:range xsd:boolean .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#Chalet
+:Chalet rdf:type owl:Class ;
+        rdfs:subClassOf :Vivienda .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#Comercio
+:Comercio rdf:type owl:Class ;
+          rdfs:subClassOf :Servicios .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#Duplex
+:Duplex rdf:type owl:Class ;
+        rdfs:subClassOf :Vivienda .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#Educacion
+:Educacion rdf:type owl:Class ;
+           rdfs:subClassOf :Servicios .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#Ocio
+:Ocio rdf:type owl:Class ;
+      rdfs:subClassOf :Servicios .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#Parque
+:Parque rdf:type owl:Class ;
+        rdfs:subClassOf :Servicios .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#Piso
+:Piso rdf:type owl:Class ;
+      rdfs:subClassOf :Vivienda .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#Salud
+:Salud rdf:type owl:Class ;
+       rdfs:subClassOf :Servicios .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#Servicios
+:Servicios rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#Transporte
+:Transporte rdf:type owl:Class ;
+            rdfs:subClassOf :Servicios .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#Ubicacion
+:Ubicacion rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/víctor/ontologies/2021/11/Ontologia#Vivienda
+:Vivienda rdf:type owl:Class .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Chalet
+                :Duplex
+                :Piso
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Comercio
+                :Educacion
+                :Ocio
+                :Parque
+                :Salud
+                :Transporte
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

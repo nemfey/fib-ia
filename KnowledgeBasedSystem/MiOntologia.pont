@@ -1,0 +1,152 @@
+(defclass Vivienda
+    (is-a USER)
+    (role concrete)
+    (pattern-match reactive)
+    (slot esta_en
+        (type INSTANCE)
+        (create-accessor read-write))
+    (slot ascensor
+        (type SYMBOL)
+        (create-accessor read-write))
+    (slot coordenadaX
+        (type INTEGER)
+        (create-accessor read-write))
+    (slot coordenadaY
+        (type INTEGER)
+        (create-accessor read-write))
+    (slot equipada
+        (type SYMBOL)
+        (create-accessor read-write))
+    (slot garaje
+        (type SYMBOL)
+        (create-accessor read-write))
+    (slot mascotas
+        (type SYMBOL)
+        (create-accessor read-write))
+    (slot nombre
+        (type STRING)
+        (create-accessor read-write))
+    (slot numeroHabitaciones
+        (type INTEGER)
+        (create-accessor read-write))
+    (slot numeroLavabos
+        (type INTEGER)
+        (create-accessor read-write))
+    (slot piscina
+        (type SYMBOL)
+        (create-accessor read-write))
+    (slot planta
+        (type INTEGER)
+        (create-accessor read-write))
+    (slot precio
+        (type INTEGER)
+        (create-accessor read-write))
+    (slot superficie
+        (type INTEGER)
+        (create-accessor read-write))
+    (slot terraza
+        (type SYMBOL)
+        (create-accessor read-write))
+    (slot vistas
+        (type SYMBOL)
+        (create-accessor read-write))
+)
+
+(defclass Chalet
+    (is-a Vivienda)
+    (role concrete)
+    (pattern-match reactive)
+    (slot numeroPisos
+        (type INTEGER)
+        (create-accessor read-write))
+)
+
+(defclass Duplex
+    (is-a Vivienda)
+    (role concrete)
+    (pattern-match reactive)
+)
+
+(defclass Piso
+    (is-a Vivienda)
+    (role concrete)
+    (pattern-match reactive)
+)
+
+(defclass Servicios
+    (is-a USER)
+    (role concrete)
+    (pattern-match reactive)
+    (slot coordenadaX
+        (type INTEGER)
+        (create-accessor read-write))
+    (slot coordenadaY
+        (type INTEGER)
+        (create-accessor read-write))
+    (slot nombre
+        (type STRING)
+        (create-accessor read-write))
+)
+
+(defclass Comercio
+    (is-a Servicios)
+    (role concrete)
+    (pattern-match reactive)
+    (slot tipoComercio
+        (type SYMBOL)
+        (create-accessor read-write))
+)
+
+(defclass Educacion
+    (is-a Servicios)
+    (role concrete)
+    (pattern-match reactive)
+    (slot tipoEducacion
+        (type SYMBOL)
+        (create-accessor read-write))
+)
+
+(defclass Ocio
+    (is-a Servicios)
+    (role concrete)
+    (pattern-match reactive)
+    (slot horario
+        (type SYMBOL)
+        (create-accessor read-write))
+    (slot tipoOcio
+        (type SYMBOL)
+        (create-accessor read-write))
+)
+
+(defclass Parque
+    (is-a Servicios)
+    (role concrete)
+    (pattern-match reactive)
+)
+
+(defclass Salud
+    (is-a Servicios)
+    (role concrete)
+    (pattern-match reactive)
+)
+
+(defclass Transporte
+    (is-a Servicios)
+    (role concrete)
+    (pattern-match reactive)
+    (slot tipoTransporte
+        (type SYMBOL)
+        (create-accessor read-write))
+)
+
+(defclass Ubicacion
+    (is-a USER)
+    (role concrete)
+    (pattern-match reactive)
+    (multislot tiene
+        (type INSTANCE)
+        (create-accessor read-write))
+    (slot nombre
+        (type STRING)
+        (create-accessor read-write))
+)
