@@ -3,10 +3,11 @@ Para ejectuar el programa seguir los siguientes pasos:
 
 - Descomprimir zip dentro de la carpeta MetricFF para poder ejecutar los comandos adecuados a pddl
 
-- Ejectuar desde la carpeta de Metric (y no la del proyecto) el siguiente comando para ejecutar :
+- Ejectuar desde la carpeta de Metric (y no la del proyecto) el siguiente comando para ejecutar:
+         
          ./ff -O -o PracticaIA3/*nivel*/domain.pddl -f PracticaIA3/*nivel*/problem.pddl
          
-         o sino:
+   o sino:
          
          ./ff -O -o PracticaIA3/*nivel*/domain.pddl -f PracticaIA3/tests/testing ejecuciones/*ficheroProblema*
          
